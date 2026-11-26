@@ -1,77 +1,221 @@
 {
-  "nome": "Jonathan Bezerra",
-  "linkedin": "https://www.linkedin.com/in/jonathanbsbezerra/",
-  "github": "https://github.com/jonathanbrunosb",
-  "credenciais": [
-    {"sigla": "CRC", "texto": "Contador com registro ativo no Conselho Regional de Contabilidade"},
-    {"sigla": "CNAI", "texto": "Auditor independente no Cadastro Nacional de Auditores Independentes"}
-  ],
-  "stack": ["SAP GUI Scripting", "VBA", "Python", "FastAPI", "SQLite e Postgres", "JavaScript e React", "IA aplicada"],
-  "timeline": [
+ "nome": "Jonathan Bezerra",
+ "linkedin": "https://www.linkedin.com/in/jonathanbsbezerra/",
+ "github": "https://github.com/jonathanbrunosb",
+ "credenciais": [
+  {
+   "sigla": "CRC",
+   "texto": "Contador com registro ativo no Conselho Regional de Contabilidade"
+  },
+  {
+   "sigla": "CNAI",
+   "texto": "Auditor independente no Cadastro Nacional de Auditores Independentes"
+  }
+ ],
+ "stack": [
+  "SAP GUI Scripting",
+  "VBA",
+  "Python",
+  "FastAPI",
+  "SQLite e Postgres",
+  "JavaScript e React",
+  "IA aplicada"
+ ],
+ "timeline": [
+  {
+   "empresa": "Vision One",
+   "logo": "assets/logos/visionone.png",
+   "periodo": "nov. 2026 – atual",
+   "atual": true,
+   "tags": [],
+   "cargos": [
     {
-      "empresa": "Grupo Equatorial",
-      "marca": "Equatorial",
-      "logo": null,
-      "cargo": "Executivo Corporativo de Contabilidade",
-      "periodo": "Atual",
-      "texto": "Atuo na Gerência de Contabilidade de uma distribuidora de energia, com foco em controles internos, demonstrações financeiras, gestão da auditoria externa, inventário e conformidade regulatória. Levo a automação e a análise de dados para a rotina do fechamento.",
-      "tags": ["Controles internos", "Demonstrações financeiras", "Auditoria externa", "Inventário", "Regulatório"]
-    },
-    {
-      "empresa": "KPMG",
-      "marca": "KPMG",
-      "logo": null,
-      "cargo": "Auditoria externa",
-      "periodo": "Mais de 3 anos",
-      "texto": "Mais de três anos em auditoria externa. Foi aqui que a visão de risco, de evidência e de controle virou método de trabalho, e é a lente que uso hoje ao desenhar processos e sistemas.",
-      "tags": ["Auditoria externa", "Controles", "Evidência"]
-    },
-    {
-      "empresa": "Primo's Sports",
-      "marca": "Primo's",
-      "logo": null,
-      "cargo": "Fundador",
-      "periodo": "Negócio próprio",
-      "texto": "Varejo de camisas de times e seleções, com vendas por Instagram e WhatsApp, operação em Recife e Maceió e envio para todo o Brasil. É o meu laboratório de empreendedorismo, catálogo e conteúdo.",
-      "tags": ["Varejo", "Operação", "Conteúdo digital"]
+     "cargo": "Gerente de Contabilidade",
+     "periodo": "nov. 2026 – atual",
+     "local": "Brasil · Tempo integral",
+     "texto": ""
     }
-  ],
-  "projetos": [
+   ]
+  },
+  {
+   "empresa": "Grupo Equatorial",
+   "logo": "assets/logos/equatorial.png",
+   "periodo": "out. 2020 – nov. 2026 · 6 anos e 2 meses",
+   "atual": false,
+   "tags": [
+    "Demonstrações financeiras",
+    "Controles internos",
+    "Auditoria externa",
+    "ECD e obrigações regulatórias",
+    "ANEEL",
+    "Automação e IA",
+    "Liderança"
+   ],
+   "cargos": [
     {
-      "nome": "ContaProva",
-      "tipo": "Sistema contábil",
-      "status": "Em construção",
-      "texto": "Sistema voltado à rotina contábil, com módulo de folha de pagamento no roteiro.",
-      "link": null,
-      "tags": ["Contabilidade", "Folha de pagamento"],
-      "visual": "razao"
+     "cargo": "Executivo Corporativo de Contabilidade e Inovação",
+     "periodo": "fev. 2026 – nov. 2026",
+     "local": "10 meses",
+     "texto": "Governança do fechamento contábil e do reporte financeiro, com revisão integral das demonstrações financeiras trimestrais e anuais. Coordenação das conciliações, do atendimento contínuo à auditoria externa e das obrigações regulatórias, incluindo a ECD. Liderança de 14 profissionais em 7 estados, com padronização de processos e fortalecimento de controles. No braço de melhoria contínua, promovi automações e o uso de inteligência artificial para decisão e geração de insights."
     },
     {
-      "nome": "Vira-Bolso",
-      "tipo": "Solução digital",
-      "status": "Em construção",
-      "texto": "Descrição em preparação. O projeto ainda está sendo finalizado e este cartão será atualizado com o que ele faz.",
-      "link": null,
-      "tags": ["Em desenvolvimento"],
-      "visual": "moeda"
+     "cargo": "Executivo Corporativo de Contabilidade",
+     "periodo": "abr. 2023 – fev. 2026",
+     "local": "Maceió, AL · 2 anos e 11 meses",
+     "texto": "Fechamento contábil mensal e conciliações de 8 empresas do Grupo. Liderança de controles internos, ajustes e reaberturas de períodos. Coordenação do atendimento a auditorias internas, externas e regulatórias. Obrigações societárias e regulatórias (ECD, demonstrações financeiras, notas explicativas e relatórios oficiais), parceria com as áreas de negócio e relatórios gerenciais para a liderança."
     },
     {
-      "nome": "Radar de Repositórios",
-      "tipo": "Curadoria",
-      "status": "No ar",
-      "texto": "Catálogo crítico de repositórios públicos do GitHub para contabilidade, fiscal, tributário, auditoria e automação, atualizado a cada 15 dias por um agente com aprovação humana.",
-      "link": "#repositorios",
-      "tags": ["GitHub", "Automação", "Curadoria"],
-      "visual": "rede"
+     "cargo": "Especialista Contábil",
+     "periodo": "fev. 2022 – abr. 2023",
+     "local": "São Luís, MA · 1 ano e 3 meses",
+     "texto": "Preparação e divulgação das demonstrações financeiras trimestrais e anuais (CVM), demonstrações regulatórias para a ANEEL, aplicação de CPC/IFRS, interface direta com a auditoria externa e avaliação de impactos de novos pronunciamentos."
     },
     {
-      "nome": "Primo's Sports",
-      "tipo": "Negócio digital",
-      "status": "Em operação",
-      "texto": "Loja de camisas de futebol com vitrine mobile, vídeos promocionais próprios e atendimento por WhatsApp.",
-      "link": null,
-      "tags": ["Varejo", "Vídeo", "WhatsApp"],
-      "visual": "camisa"
+     "cargo": "Senior Account Analyst",
+     "periodo": "out. 2020 – fev. 2022",
+     "local": "Maranhão · 1 ano e 5 meses",
+     "texto": ""
     }
-  ]
+   ]
+  },
+  {
+   "empresa": "KPMG",
+   "logo": "assets/logos/kpmg.png",
+   "periodo": "set. 2017 – out. 2020 · 3 anos e 2 meses",
+   "atual": false,
+   "tags": [
+    "Auditoria independente",
+    "Análise de balancete",
+    "Capacidade analítica",
+    "Orçamento"
+   ],
+   "cargos": [
+    {
+     "cargo": "Audit Senior",
+     "periodo": "out. 2019 – out. 2020",
+     "local": "Recife e região · 1 ano e 1 mês",
+     "texto": "Planejamento e condução de projetos de auditoria independente em diferentes ciclos das demonstrações financeiras, com qualidade técnica, cumprimento de prazos e aderência às normas."
+    },
+    {
+     "cargo": "Auditor Assistente A",
+     "periodo": "out. 2018 – set. 2019",
+     "local": "Recife e região · 1 ano",
+     "texto": ""
+    },
+    {
+     "cargo": "Auditor Assistente",
+     "periodo": "abr. 2018 – out. 2018",
+     "local": "Recife e região · 7 meses",
+     "texto": ""
+    },
+    {
+     "cargo": "Audit Trainee",
+     "periodo": "set. 2017 – abr. 2018",
+     "local": "Recife, PE · 8 meses",
+     "texto": ""
+    }
+   ]
+  },
+  {
+   "empresa": "Acumuladores Moura S.A.",
+   "logo": "assets/logos/moura.png",
+   "periodo": "jul. 2015 – ago. 2017 · 2 anos e 2 meses",
+   "atual": false,
+   "tags": [
+    "Conciliações",
+    "Fechamento",
+    "Normas internacionais"
+   ],
+   "cargos": [
+    {
+     "cargo": "Analista Contábil",
+     "periodo": "jan. 2017 – ago. 2017",
+     "local": "8 meses",
+     "texto": "Análise de registros contábeis e conciliações de contas, fechamento e análise de balanço e elaboração das demonstrações financeiras conforme as normas internacionais de contabilidade."
+    },
+    {
+     "cargo": "Estagiário de Controladoria",
+     "periodo": "jul. 2015 – dez. 2016",
+     "local": "1 ano e 6 meses",
+     "texto": ""
+    }
+   ]
+  }
+ ],
+ "projetos": [
+  {
+   "nome": "ContaProva",
+   "tipo": "Sistema contábil",
+   "status": "Em construção",
+   "texto": "Sistema voltado à rotina contábil, com módulo de folha de pagamento no roteiro.",
+   "link": null,
+   "tags": [
+    "Contabilidade",
+    "Folha de pagamento"
+   ],
+   "visual": "razao"
+  },
+  {
+   "nome": "Vira-Bolso",
+   "tipo": "Solução digital",
+   "status": "Em construção",
+   "texto": "Descrição em preparação. O projeto ainda está sendo finalizado e este cartão será atualizado com o que ele faz.",
+   "link": null,
+   "tags": [
+    "Em desenvolvimento"
+   ],
+   "visual": "moeda"
+  },
+  {
+   "nome": "Radar de Repositórios",
+   "tipo": "Curadoria",
+   "status": "No ar",
+   "texto": "Catálogo crítico de repositórios públicos do GitHub para contabilidade, fiscal, tributário, auditoria e automação, atualizado a cada 15 dias por um agente com aprovação humana.",
+   "link": "#repositorios",
+   "tags": [
+    "GitHub",
+    "Automação",
+    "Curadoria"
+   ],
+   "visual": "rede"
+  },
+  {
+   "nome": "Primo's Sports",
+   "tipo": "Negócio digital",
+   "status": "Em operação",
+   "texto": "Loja de camisas de futebol com vitrine mobile, vídeos promocionais próprios e atendimento por WhatsApp.",
+   "link": null,
+   "tags": [
+    "Varejo",
+    "Vídeo",
+    "WhatsApp"
+   ],
+   "visual": "camisa"
+  }
+ ],
+ "foto": "assets/jonathan.jpg",
+ "formacao": [
+  {
+   "titulo": "MBA em Gestão Financeira: Controladoria, Auditoria e Compliance",
+   "instituicao": "Fundação Getulio Vargas (FGV)",
+   "periodo": "mar. 2022 – abr. 2025"
+  },
+  {
+   "titulo": "Ciências Contábeis",
+   "instituicao": "Universidade Federal de Pernambuco (UFPE)",
+   "periodo": "2013 – 2018"
+  }
+ ],
+ "certificacoes": [
+  {
+   "titulo": "AI for Leaders",
+   "instituicao": "StartSe University",
+   "periodo": "jan. 2026"
+  },
+  {
+   "titulo": "Contabilidade e IFRS para Empresas do Setor de Energia Elétrica",
+   "instituicao": "FIPECAFI",
+   "periodo": "set. 2024"
+  }
+ ]
 }

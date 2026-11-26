@@ -74,22 +74,30 @@ section.s{padding:84px 0}
 
 /* trajetória */
 .traj{background:var(--branco);border-top:1px solid var(--reg);border-bottom:1px solid var(--reg)}
-.tl{position:relative;margin-top:48px;padding-left:0}
-.tl::before{content:"";position:absolute;left:55px;top:10px;bottom:10px;width:3px;background:var(--reg);border-radius:3px}
-.tl::after{content:"";position:absolute;left:55px;top:10px;width:3px;height:calc((100% - 20px)*var(--p,0));background:var(--azul);border-radius:3px}
-.it{position:relative;display:grid;grid-template-columns:112px 1fr;gap:28px;padding-bottom:40px}
-.it:last-child{padding-bottom:0}
-.lg{width:112px;height:76px;background:var(--branco);border:1px solid var(--reg);border-radius:16px;display:grid;place-items:center;font-weight:800;letter-spacing:-.04em;font-size:19px;text-align:center;padding:6px;position:relative;z-index:1;overflow:hidden}
-.lg img{max-width:84%;max-height:70%;object-fit:contain}
-.it::before{content:"";position:absolute;left:49px;top:92px;width:15px;height:15px;background:var(--azul);border:3px solid var(--branco);border-radius:50%;z-index:2;display:none}
-.cd{background:var(--bg);border:1px solid var(--reg);border-radius:20px;padding:26px 28px}
-.cd h3{font-size:28px;letter-spacing:-.035em;line-height:1.1}
-.cd .cg{margin-top:6px;font-size:18px;color:#27355A;font-weight:600}
-.cd .pe{display:inline-block;margin-left:10px;background:var(--menta);color:#0C5A31;font-size:14px;font-weight:700;border-radius:999px;padding:3px 11px;vertical-align:2px}
-.cd .pe.n{background:var(--azul2);color:var(--azul)}
-.cd p{margin-top:14px;font-size:18px;color:#27355A;max-width:40em}
-.cd .tg{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tl{display:grid;gap:22px;margin-top:44px}
+.it{display:grid;grid-template-columns:150px minmax(0,1fr);gap:26px;align-items:start}
+.lg{height:92px;background:var(--branco);border:1px solid var(--reg);border-radius:18px;display:grid;place-items:center;padding:14px 18px;position:sticky;top:96px}
+.lg img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.cd{background:var(--bg);border:1px solid var(--reg);border-radius:22px;padding:26px 30px}
+.cd h3{font-size:30px;letter-spacing:-.035em;line-height:1.1}
+.cd .tt{margin-top:6px;font-size:16px;color:var(--mut)}
+.cd .pe{display:inline-block;margin-left:10px;background:var(--menta);color:#0C5A31;font-size:14px;font-weight:700;border-radius:999px;padding:3px 11px;vertical-align:1px}
+.cs{margin-top:20px;display:grid;gap:0}
+.cg{position:relative;padding:0 0 22px 26px;border-left:2px solid var(--reg);margin-left:6px}
+.cg:last-child{padding-bottom:0;border-left-color:transparent}
+.cg::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--branco);border:3px solid var(--azul)}
+.cg h4{font-size:19px;letter-spacing:-.015em;line-height:1.3}
+.cg .lc{font-size:15px;color:var(--mut);margin-top:2px}
+.cg p{margin-top:8px;font-size:16.5px;color:#27355A;max-width:42em;line-height:1.5}
+.cd .tg{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .cd .tg span{border:1px solid var(--reg);background:var(--branco);border-radius:999px;padding:4px 12px;font-size:14.5px;color:var(--mut)}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.edu h3{font-size:22px;letter-spacing:-.02em;margin-bottom:12px}
+.edu ul{list-style:none;display:grid;gap:10px}
+.edu li{background:var(--bg);border:1px solid var(--reg);border-radius:16px;padding:16px 20px}
+.edu li b{display:block;font-size:17px;line-height:1.3}
+.edu li span{display:block;font-size:15px;color:var(--mut);margin-top:3px}
+.foto{display:block;width:100%;height:auto;aspect-ratio:16/11;object-fit:cover;object-position:50% 18%;border-radius:22px;border:1px solid var(--reg);margin-bottom:14px;background:var(--azul2)}
 
 /* projetos */
 .proj{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:40px}
@@ -168,11 +176,10 @@ footer strong{color:#fff;font-size:18px;letter-spacing:-.02em}
  section.s{padding:56px 0}
  .ident .wrap{grid-template-columns:1fr}.ident p{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding:16px 0}.ident p:first-child{border-top:0}
  .nums{grid-template-columns:1fr 1fr}.num{padding:18px}
- .tl::before,.tl::after{left:18px}
- .it{grid-template-columns:1fr;gap:12px;padding-left:44px}
- .it::before{display:block;left:11px;top:6px}
- .lg{width:104px;height:56px;font-size:16px}
- .cd{padding:20px}.cd h3{font-size:24px}.cd p{font-size:17px}
+ .it{grid-template-columns:1fr;gap:12px}
+ .lg{position:static;width:150px;height:72px}
+ .cd{padding:20px}.cd h3{font-size:25px}.cd .pe{display:block;margin:8px 0 0;width:max-content}
+ .edu{grid-template-columns:1fr}
  .lin{grid-template-columns:minmax(0,1fr) 40px;gap:14px 12px}.th{grid-column:1/-1}.tx{grid-column:1}.ir{grid-column:2;grid-row:2}
  .busca,.busca input{width:100%}
  .pil{flex-wrap:nowrap;overflow-x:auto;margin-right:-20px;padding-right:20px;scrollbar-width:none}.pil button{white-space:nowrap;flex:none}
@@ -199,8 +206,6 @@ footer strong{color:#fff;font-size:18px;letter-spacing:-.02em}
   </div>
   <div class="mapa">
     <canvas id="mapa" aria-label="Mapa interativo das áreas em que atuo: contabilidade, auditoria, controles, fiscal, automação, IA e sistemas"></canvas>
-    <div class="leg" aria-hidden="true"><span><i style="background:#1B5CF0"></i>Débito</span><span><i style="background:#12A9BE"></i>Crédito</span></div>
-    <div class="eq" aria-hidden="true">Débito = Crédito</div>
     <p class="cap" id="cap" aria-live="polite"><b>Passe o mouse ou toque nos pontos.</b>Cada ponto é uma área em que atuo, e as ligações mostram como se conectam.</p>
   </div>
 </div></section>
@@ -214,23 +219,27 @@ footer strong{color:#fff;font-size:18px;letter-spacing:-.02em}
 <section class="s sobre" id="sobre"><div class="wrap">
   <div>
     <h2 class="tit">Quem sou</h2>
-    <p>Sou contador e auditor, e trabalho com contabilidade corporativa, controles internos e demonstrações financeiras. Depois de mais de três anos em auditoria externa, levei para a contabilidade a mesma exigência de rastreabilidade e evidência.</p>
+    <p>Sou contador e auditor, com mais de dez anos de carreira entre auditoria independente na KPMG e contabilidade corporativa no setor elétrico, onde liderei o fechamento, as demonstrações financeiras e o relacionamento com a auditoria externa. Hoje sou Gerente de Contabilidade na Vision One.</p>
     <p>Gosto de transformar rotina em processo confiável: automação de fechamento e conciliações, sistemas próprios e IA aplicada onde ela gera resultado mensurável. Este espaço reúne a minha trajetória, o que eu construo e as ferramentas abertas que uso como referência.</p>
     <div class="stack" id="stack"></div>
   </div>
-  <div class="nums">
-    <div class="num"><strong class="tn" data-n="3" data-s="+">0</strong><span>anos de auditoria externa</span></div>
-    <div class="num"><strong class="tn" id="nrep" data-n="68">0</strong><span>repositórios analisados</span></div>
-    <div class="num"><strong class="tn" id="ncat" data-n="13">0</strong><span>categorias de solução</span></div>
-    <div class="num"><strong class="tn" id="nproj" data-n="4">0</strong><span>projetos no portfólio</span></div>
-    <div class="cred" id="cred"></div>
+  <div>
+    <img class="foto" id="foto" alt="Jonathan Bezerra" width="640" height="800">
+    <div class="nums">
+      <div class="num"><strong class="tn" data-n="11" data-s="+">0</strong><span>anos de carreira</span></div>
+      <div class="num"><strong class="tn" data-n="3" data-s="+">0</strong><span>anos em auditoria externa</span></div>
+      <div class="num"><strong class="tn" data-n="14">0</strong><span>profissionais liderados em 7 estados</span></div>
+      <div class="num"><strong class="tn" id="nrep" data-n="68">0</strong><span>repositórios analisados</span></div>
+      <div class="cred" id="cred"></div>
+    </div>
   </div>
 </div></section>
 
 <section class="s traj" id="trajetoria"><div class="wrap">
   <h2 class="tit">Trajetória</h2>
-  <p class="sub">Da auditoria externa à contabilidade corporativa, sempre com um pé na tecnologia.</p>
+  <p class="sub">Da controladoria e da auditoria independente à gerência de contabilidade, sempre com um pé na tecnologia.</p>
   <div class="tl" id="tl"></div>
+  <div class="edu" id="edu"></div>
 </div></section>
 
 <section class="s" id="projetos"><div class="wrap">
@@ -288,7 +297,7 @@ function mapa(){
   const P=Array.from({length:30},(_,i)=>({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0006,vy:(Math.random()-.5)*.0006}));
   const N=AREAS.map((a,i)=>({a:a[0],d:a[1],ang:i/AREAS.length*Math.PI*2-Math.PI/2,x:0,y:0}));
   function size(){dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);draw()}
-  function pos(){const av=H-64-(W<520?150:96),cx=W/2,cy=64+av/2,rx=W*.34,ry=av*.4;N.forEach((n,i)=>{const a=n.ang+t*.00012;n.x=cx+Math.cos(a)*rx;n.y=cy+Math.sin(a)*ry;
+  function pos(){const av=H-40-(W<520?150:120),cx=W/2,cy=40+av/2,rx=W*.34,ry=av*.4;N.forEach((n,i)=>{const a=n.ang+t*.00012;n.x=cx+Math.cos(a)*rx;n.y=cy+Math.sin(a)*ry;
     const dx=mx-n.x,dy=my-n.y,d=Math.hypot(dx,dy);if(d<120){n.x+=dx*.12*(1-d/120);n.y+=dy*.12*(1-d/120)}});return[cx,cy]}
   function draw(){
     ctx.clearRect(0,0,W,H);const[cx,cy]=pos();
@@ -302,11 +311,7 @@ function mapa(){
     N.forEach((n,i)=>{const m=N[(i+1)%N.length],on=hov===i;
       ctx.strokeStyle=on?'rgba(27,92,240,.8)':'rgba(10,26,58,.16)';ctx.lineWidth=on?2:1.2;
       ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(n.x,n.y);ctx.stroke();
-      ctx.strokeStyle='rgba(10,26,58,.08)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(n.x,n.y);ctx.lineTo(m.x,m.y);ctx.stroke();
-      // lançamentos: débito sai do centro, crédito volta
-      const f=((t*.00035+i*.37)%1),f2=1-((t*.00035+i*.37+.5)%1);
-      ctx.fillStyle='#1B5CF0';ctx.beginPath();ctx.arc(cx+(n.x-cx)*f,cy+(n.y-cy)*f,3.6,0,7);ctx.fill();
-      ctx.fillStyle='#12A9BE';ctx.beginPath();ctx.arc(cx+(n.x-cx)*f2,cy+(n.y-cy)*f2,3.6,0,7);ctx.fill()});
+      ctx.strokeStyle='rgba(10,26,58,.08)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(n.x,n.y);ctx.lineTo(m.x,m.y);ctx.stroke();});
     // centro
     ctx.fillStyle='#0A1A3A';ctx.beginPath();ctx.arc(cx,cy,32,0,7);ctx.fill();
     ctx.fillStyle='#fff';ctx.font='800 20px system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('JB',cx,cy+1);
@@ -339,19 +344,18 @@ function contadores(){
   const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){run(x.target);io.unobserve(x.target)}}),{threshold:.6});
   els.forEach(e=>io.observe(e));
 }
-function progresso(){
-  const tl=$('#tl');const f=()=>{const r=tl.getBoundingClientRect(),h=innerHeight;
-    tl.style.setProperty('--p',Math.max(0,Math.min(1,(h*.65-r.top)/r.height)).toFixed(3))};
-  addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f();
-}
 function pagina(P,R){
   $('#stack').innerHTML=P.stack.map(s=>`<span>${esc(s)}</span>`).join('');
   $('#cred').innerHTML=P.credenciais.map(c=>`<div><b>${esc(c.sigla)}</b><span>${esc(c.texto)}</span></div>`).join('');
-  $('#nrep').dataset.n=R.repos.filter(r=>r.status!=='pendente').length;$('#ncat').dataset.n=R.categories.length;$('#nproj').dataset.n=P.projetos.length;
+  $('#nrep').dataset.n=R.repos.filter(r=>r.status!=='pendente').length;
   $('#lk').href=P.linkedin;$('#gh').href=P.github;
-  $('#tl').innerHTML=P.timeline.map(i=>`<div class="it"><div class="lg" title="${esc(i.empresa)}">${i.logo?`<img src="${esc(i.logo)}" alt="Logo ${esc(i.empresa)}">`:esc(i.marca)}</div>
-   <div class="cd"><h3>${esc(i.empresa)}</h3><p class="cg">${esc(i.cargo)}<span class="pe ${i.periodo==='Atual'?'':'n'}">${esc(i.periodo)}</span></p><p>${esc(i.texto)}</p>
-   <div class="tg">${i.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div></div></div>`).join('');
+  $('#foto').src=P.foto;
+  $('#tl').innerHTML=P.timeline.map(i=>`<div class="it"><div class="lg"><img src="${esc(i.logo)}" alt="Logo ${esc(i.empresa)}"></div>
+   <div class="cd"><h3>${esc(i.empresa)}</h3><p class="tt">${esc(i.periodo)}${i.atual?'<span class="pe">Atual</span>':''}</p>
+   <div class="cs">${i.cargos.map(c=>`<div class="cg"><h4>${esc(c.cargo)}</h4><p class="lc">${esc(c.periodo)}${c.local?' · '+esc(c.local):''}</p>${c.texto?`<p>${esc(c.texto)}</p>`:''}</div>`).join('')}</div>
+   ${i.tags.length?`<div class="tg">${i.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div>`:''}</div></div>`).join('');
+  const L=(t,a)=>`<div><h3>${t}</h3><ul>${a.map(x=>`<li><b>${esc(x.titulo)}</b><span>${esc(x.instituicao)} · ${esc(x.periodo)}</span></li>`).join('')}</ul></div>`;
+  $('#edu').innerHTML=L('Formação',P.formacao)+L('Certificações',P.certificacoes);
   const V={
    razao:'<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><rect width="300" height="150" fill="#E8EFFE"/><g stroke="#0A1A3A" stroke-width="2.4" fill="none"><path d="M60 38h180M150 38v82"/><path d="M60 70h60M180 70h60M60 96h60M180 96h60" stroke="#1B5CF0"/></g><text x="86" y="30" font-size="14" font-weight="800" fill="#0A1A3A" font-family="system-ui">D</text><text x="205" y="30" font-size="14" font-weight="800" fill="#0A1A3A" font-family="system-ui">C</text></svg>',
    moeda:'<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><rect width="300" height="150" fill="#D6F5E3"/><circle cx="150" cy="75" r="42" fill="#fff" stroke="#0A1A3A" stroke-width="2.4"/><path d="M150 52v46M138 64c0-8 24-8 24 0s-24 8-24 18 24 10 24 2" stroke="#0A1A3A" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>',
@@ -403,7 +407,7 @@ $('#q').addEventListener('input',()=>{lim=PAGE;lista()});$('#ord').addEventListe
  ['sobre','trajetoria','projetos','repositorios'].forEach(id=>io.observe(document.getElementById(id)))}
 
 mapa();
-Promise.all([J('data/perfil.json'),J('data/repos.json')]).then(([P,R])=>{D=R;pagina(P,R);contadores();progresso();pilulas();lista()})
+Promise.all([J('data/perfil.json'),J('data/repos.json')]).then(([P,R])=>{D=R;pagina(P,R);contadores();pilulas();lista()})
 .catch(()=>{$('#grade').innerHTML='<li class="vazio">Não foi possível carregar os dados. Abra pelo GitHub Pages ou rode python3 -m http.server na pasta do projeto.</li>'});
 </script>
 </body>
