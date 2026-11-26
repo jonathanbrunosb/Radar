@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jonathan Bezerra · Repositórios</title>
+<meta name="description" content="Repositórios públicos do GitHub para contabilidade, fiscal, tributário, auditoria e automação, com análise de cada um. Projeto pessoal de Jonathan Bezerra.">
+<style>
+:root{--ink:#0E0E10;--mut:#55585F;--reg:#D8D9DC;--azul:#1744F5;--mint:#D3F8DE;--esc:#1B1B1D;--ok:#0B7A3B;--morno:#946200;--parado:#B42318;--w:1180px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 32px}
+
+/* topo */
+.topo{border-bottom:1px solid var(--reg)}
+.topo .wrap{display:flex;justify-content:space-between;align-items:center;height:84px}
+.marca{font-size:30px;font-weight:800;letter-spacing:-.035em;text-decoration:none}
+.nav{display:flex;gap:36px;font-size:20px}
+.nav a{text-decoration:none;padding:6px 0;border-bottom:3px solid transparent}
+.nav a[aria-current]{color:var(--azul);font-weight:600;border-color:var(--azul)}
+.nav a:hover{border-color:var(--ink)}
+.nav a[aria-current]:hover{border-color:var(--azul)}
+
+/* corpo */
+.corpo{display:grid;grid-template-columns:260px minmax(0,1fr);gap:0;padding:44px 0 64px}
+.lado{border-right:1px solid var(--reg);padding-right:28px}
+.lado h2{font-size:18px;font-weight:400;color:var(--mut);margin:6px 0 34px}
+.lado ul{list-style:none}
+.lado button{display:block;width:100%;text-align:left;background:none;border:0;border-left:3px solid transparent;padding:11px 0 11px 17px;margin-left:0;font-size:19px;cursor:pointer;color:var(--ink);line-height:1.3}
+.lado button:hover{text-decoration:underline;text-underline-offset:4px}
+.lado button[aria-pressed=true]{border-left-color:var(--azul);font-weight:700}
+.lado .sub button{font-size:16px;color:var(--mut);padding:7px 0 7px 36px;border-left-color:transparent}
+.lado .sub button[aria-pressed=true]{color:var(--ink);font-weight:700;border-left-color:var(--azul);padding-left:33px}
+.lado .n{color:var(--mut);font-weight:400;margin-left:6px;font-size:.85em}
+
+.princ{padding-left:44px;min-width:0}
+.cab{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+h1{font-size:clamp(46px,7vw,84px);font-weight:500;letter-spacing:-.045em;line-height:1}
+.sub1{font-size:clamp(19px,2.2vw,26px);color:#2c2e33;margin-top:16px;max-width:30em;line-height:1.3}
+.busca{display:flex;align-items:center;gap:12px;margin-top:20px;border-bottom:2px solid transparent;flex:0 0 auto}
+.busca:focus-within{border-bottom-color:var(--azul)}
+.busca svg{flex:none}
+.busca input{border:0;background:none;font-size:20px;width:170px;padding:6px 0;outline:0}
+.busca input::placeholder{color:var(--ink);opacity:1}
+.barra{display:flex;justify-content:space-between;align-items:center;margin:34px 0 18px;font-size:16px;color:var(--mut)}
+.barra select{border:0;background:none;font-size:16px;color:var(--ink);cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+
+/* linhas */
+.lista{list-style:none;border-top:1px solid var(--reg)}
+.lin{display:grid;grid-template-columns:368px 1fr 44px;gap:34px;padding:24px 0;border-bottom:1px solid var(--reg);align-items:start}
+.lin:first-child{padding-top:24px}
+.th{display:block;width:100%;aspect-ratio:368/176;background:var(--esc);overflow:hidden}
+.th svg{display:block;width:100%;height:100%}
+.tx{min-width:0;padding-top:6px}
+.tx h3{font-size:clamp(26px,3.3vw,38px);font-weight:800;letter-spacing:-.035em;line-height:1.08;overflow-wrap:anywhere}
+.dono{font-size:16px;color:var(--mut);margin-top:6px}
+.tx .d{font-size:19px;color:#2c2e33;margin-top:10px;line-height:1.4;max-width:40em}
+.meta{margin-top:14px;font-size:16px;color:var(--mut);display:flex;flex-wrap:wrap;gap:4px 18px}
+.meta b{font-weight:600}
+.meta .ok{color:var(--ok)}.meta .morno{color:var(--morno)}.meta .parado{color:var(--parado)}
+.meta .alerta{color:var(--parado);font-weight:600}
+.meta .par{color:var(--ink);font-weight:600}
+.ir{justify-self:end;margin-top:10px;width:44px;height:44px;display:grid;place-items:center;text-decoration:none;border-radius:50%}
+.ir:hover{background:#EEF1FF;color:var(--azul)}
+.abre{text-align:left;margin-top:14px;background:none;border:0;padding:0;font-size:17px;color:var(--azul);cursor:pointer;text-decoration:underline;text-underline-offset:4px;font-weight:600}
+.abre[aria-expanded=true]::after{content:" (fechar)"}
+.det{margin-top:14px;padding:4px 0 0 18px;border-left:3px solid var(--azul);max-width:44em;display:grid;gap:12px;font-size:17px;line-height:1.5;animation:ab .18s ease-out}
+.det[hidden]{display:none}
+.det b{font-weight:700}
+.av b{color:var(--parado)}
+@keyframes ab{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.mais{display:block;margin:30px auto 0;padding:14px 30px;border:2px solid var(--ink);background:#fff;font-size:18px;font-weight:600;cursor:pointer}
+.mais:hover{background:var(--ink);color:#fff}
+.mais[hidden]{display:none}
+.vazio{padding:48px 0;font-size:20px;color:var(--mut);max-width:30em}
+
+/* sobre + rodapé */
+.sobre{border-top:1px solid var(--reg);padding:48px 0}
+.sobre .wrap{display:grid;grid-template-columns:260px 1fr;gap:0}
+.sobre h2{font-size:18px;font-weight:400;color:var(--mut)}
+.sobre div{padding-left:44px;display:grid;gap:14px;font-size:20px;max-width:46em;line-height:1.45}
+.sobre .leg{font-size:16px;color:var(--mut)}
+footer{border-top:1px solid var(--reg)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:22px;padding-bottom:26px;font-size:16px}
+footer strong{font-size:22px;letter-spacing:-.03em}
+footer span{color:var(--mut);align-self:center}
+
+@media (max-width:980px){
+ .lin{grid-template-columns:260px minmax(0,1fr) 40px;gap:24px}
+ .corpo{grid-template-columns:minmax(0,1fr)}
+ .lado{border-right:0;border-bottom:1px solid var(--reg);padding:0 0 18px;margin-bottom:28px}
+ .lado h2{margin-bottom:12px}
+ .lado .raiz,.lado .sub{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+ .lado ul::-webkit-scrollbar{display:none}
+ .lado li{flex:none}
+ .lado button{border-left:0;border-bottom:3px solid transparent;padding:9px 16px 9px 0;margin-right:10px;width:auto;white-space:nowrap;font-size:17px}
+ .lado button[aria-pressed=true]{border-bottom-color:var(--azul)}
+ .lado .sub button{padding:6px 16px 6px 0;font-size:15px;border-left:0}
+ .lado .sub button[aria-pressed=true]{padding-left:0;border-left:0;border-bottom-color:var(--azul)}
+ .princ{padding-left:0}
+ .sobre .wrap{grid-template-columns:1fr;gap:12px}.sobre div{padding-left:0}
+}
+@media (max-width:700px){
+ .wrap{padding:0 20px}
+ .topo .wrap{height:64px}.marca{font-size:19px;white-space:nowrap}.nav{gap:14px;font-size:15px;white-space:nowrap}.nav a[href^="#c"]{display:none}
+ .corpo{padding-top:28px}
+ .cab{flex-direction:column;gap:0}
+ .busca{margin-top:22px;width:100%}.busca input{width:100%}
+ .lin{grid-template-columns:minmax(0,1fr) 40px;gap:14px 12px}
+ .th{grid-column:1/-1}
+ .tx{grid-column:1}.ir{grid-column:2;grid-row:2;margin-top:2px}
+ .tx .d{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){.det{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="topo"><div class="wrap">
+  <a class="marca" href="#">Jonathan Bezerra</a>
+  <nav class="nav" aria-label="Principal">
+    <a href="#catalogo" aria-current="page">Repositórios</a>
+    <a href="#sobre">Sobre</a>
+    <a href="https://github.com/jonathanbrunosb" target="_blank" rel="noopener" id="gh">GitHub ↗</a>
+  </nav>
+</div></header>
+
+<main class="wrap corpo" id="catalogo">
+  <aside class="lado" aria-label="Filtros">
+    <h2>Filtrar por área</h2>
+    <ul class="raiz" id="filtros"></ul>
+  </aside>
+  <section class="princ">
+    <div class="cab">
+      <div>
+        <h1>Repositórios</h1>
+        <p class="sub1">Soluções públicas do GitHub para contabilidade, fiscal, auditoria e automação.</p>
+      </div>
+      <label class="busca"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        <input id="q" type="search" placeholder="Buscar" aria-label="Buscar repositório"></label>
+    </div>
+    <div class="barra"><span id="cnt" aria-live="polite"></span>
+      <label>Ordenar por <select id="ord"><option value="cat">Área</option><option value="stars">Estrelas</option><option value="recent">Atualização recente</option></select></label></div>
+    <ul class="lista" id="grade"></ul>
+    <button class="mais" id="mais" hidden>Mostrar mais</button>
+  </section>
+</main>
+
+<section class="sobre" id="sobre"><div class="wrap">
+  <h2>Sobre</h2>
+  <div>
+    <p>Curadoria pessoal de repositórios públicos do GitHub que ajudam no dia a dia de contabilidade, fiscal, tributário, auditoria, projetos e automação. Cada item tem o que faz, como funciona, onde agrega e as ressalvas de licença e manutenção.</p>
+    <p class="leg"><b>Ativo</b>: último commit em até 120 dias. <b>Morno</b>: até 1 ano. <b>Parado</b>: mais de 1 ano. “Verificar licença” indica que o GitHub não detectou licença ou que ela é copyleft. Antes de usar em ambiente corporativo, confirme licença, segurança e adequação regulatória.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <strong>Jonathan Bezerra</strong>
+  <span id="rod">Projeto pessoal, sem vínculo com empresa. Os repositórios pertencem aos respectivos autores.</span>
+</div></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmtN=n=>new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionDigits:1}).format(n);
+const fmtD=iso=>iso.split('-').reverse().join('/');
+const PAGE=12;
+let D=null, flt={t:'all'}, lim=PAGE;
+const dias=iso=>Math.floor((Date.now()-new Date(iso+'T12:00:00'))/864e5);
+function status(iso){const d=dias(iso);return d<=120?['ok','Ativo']:d<=365?['morno','Morno']:['parado','Parado']}
+function licenca(l){
+  if(l==='none'||l==='NOASSERTION')return['Verificar licença',true];
+  if(/GPL/.test(l))return[l+' (copyleft)',true];return[l,false]}
+const hash=s=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
+const rnd=(h,i,a,b)=>a+((h>>>(i*4))%1000)/1000*(b-a);
+
+/* miniaturas: três famílias, escolhidas pela área e variadas pelo nome do repositório */
+function thumb(r,cod){
+  const h=hash(r.repo);
+  if(cod==='1'||cod==='2'){ // gráfico em fundo menta
+    const ys=[0,1,2,3].map(i=>150-(i*28)-rnd(h,i,6,34));
+    const xs=[34,120,214,300];
+    const pts=xs.map((x,i)=>[x,Math.max(30,ys[i])]);
+    const d=`M${pts[0]} C${pts[0][0]+50},${pts[0][1]} ${pts[1][0]-40},${pts[1][1]} ${pts[1]} S${pts[2][0]-40},${pts[2][1]} ${pts[2]} S${pts[3][0]-40},${pts[3][1]} ${pts[3]}`;
+    return `<svg viewBox="0 0 368 176" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="368" height="176" fill="#D3F8DE"/>
+    <path d="M20 14V156H350" stroke="#0E0E10" stroke-width="1.6" fill="none"/>
+    ${[40,76,112].map(y=>`<path d="M14 ${y}h6" stroke="#0E0E10" stroke-width="1.6"/>`).join('')}
+    ${xs.map(x=>`<path d="M${x} 156v8" stroke="#0E0E10" stroke-width="1.6"/>`).join('')}
+    <path d="${d}" stroke="#0E0E10" stroke-width="2" fill="none"/>${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="#0E0E10"/>`).join('')}</svg>`}
+  if(cod==='5'){ // texto de teleprompter
+    const hl=1+(h%3);
+    const ln=[0,1,2,3].map(i=>{const w=rnd(h,i,150,290);const y=30+i*30;
+      return i===hl?`<rect x="30" y="${y-18}" width="${w+10}" height="26" fill="#1744F5"/><rect x="36" y="${y-8}" width="${w-6}" height="6" rx="3" fill="#fff"/>`:`<rect x="36" y="${y-8}" width="${w-20}" height="6" rx="3" fill="#E9E9EB"/>`}).join('');
+    return `<svg viewBox="0 0 368 176" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="368" height="176" fill="#1B1B1D"/>${ln}
+    <path d="M32 146l14 8-14 8z" fill="#fff" transform="translate(0,-6)"/><rect x="62" y="146" width="276" height="5" fill="#8d8d90"/><rect x="62" y="146" width="${rnd(h,5,40,160)}" height="5" fill="#1744F5"/></svg>`}
+  // cronograma em fundo escuro
+  const bars=[0,1,2].map(i=>{const x=rnd(h,i,22,170),w=rnd(h,i+3,90,170);const f=i===1?'#fff':'#1744F5';return `<rect x="${x}" y="${28+i*46}" width="${Math.min(w,340-x)}" height="26" fill="${f}"/>`}).join('');
+  const lx=rnd(h,6,150,250);
+  return `<svg viewBox="0 0 368 176" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="368" height="176" fill="#1B1B1D"/>
+  ${[1,2,3,4,5,6,7,8].map(i=>`<path d="M${i*41} 0v176" stroke="#38383B" stroke-width="1"/>`).join('')}${[1,2,3].map(i=>`<path d="M0 ${i*44}h368" stroke="#38383B" stroke-width="1"/>`).join('')}
+  ${bars}<rect x="${lx}" y="0" width="2" height="176" fill="#fff"/></svg>`}
+
+const grupos=()=>{const g=[];D.categories.forEach(c=>{let x=g.find(y=>y.nome===c.group);if(!x){x={nome:c.group,cod:c.code.split('.')[0],ids:[]};g.push(x)}x.ids.push(c.id)});return g};
+const grpDe=id=>grupos().find(g=>g.ids.includes(id));
+const noFiltro=r=>flt.t==='all'||(flt.t==='cat'&&r.category===flt.id)||(flt.t==='grp'&&grupos().find(x=>x.nome===flt.id).ids.includes(r.category));
+const conta=f=>D.repos.filter(r=>f(r)).length;
+
+function filtros(){
+  const G=grupos();
+  const grpAtivo=flt.t==='grp'?flt.id:flt.t==='cat'?grpDe(flt.id).nome:null;
+  let h=`<li><button data-t="all" aria-pressed="${flt.t==='all'}">Todos os repositórios<span class="n">${D.repos.length}</span></button></li>`;
+  G.forEach(g=>{
+    h+=`<li><button data-t="grp" data-id="${esc(g.nome)}" aria-pressed="${flt.t==='grp'&&flt.id===g.nome}">${esc(g.nome)}<span class="n">${conta(r=>g.ids.includes(r.category))}</span></button>`;
+    if(grpAtivo===g.nome&&g.ids.length>1){
+      h+=`<ul class="sub">`+g.ids.map(id=>{const c=D.categories.find(x=>x.id===id);
+        return `<li><button data-t="cat" data-id="${id}" aria-pressed="${flt.t==='cat'&&flt.id===id}" title="${esc(c.desc)}">${esc(c.name)}<span class="n">${conta(r=>r.category===id)}</span></button></li>`}).join('')+`</ul>`}
+    h+='</li>'});
+  $('#filtros').innerHTML=h;
+}
+function linha(r,i){
+  const [sc,st]=status(r.pushed),[lt,la]=licenca(r.license),[own,nm]=r.repo.split('/');
+  const g=grpDe(r.category), id='d'+i;
+  const par=r.parecer?`<span class="par">Parecer: ${esc(r.parecer.tipo)}</span>`:(r.note?'<span class="par">Com ressalva</span>':'');
+  return `<li class="lin"><a class="th" href="${esc(r.url)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">${thumb(r,g.cod)}</a>
+  <div class="tx"><h3>${esc(nm)}</h3><p class="dono">${esc(own)}</p><p class="d">${esc(r.what)}</p>
+   <p class="meta"><span class="${sc}"><b>${st}</b>, commit em ${fmtD(r.pushed)}</span><span>${fmtN(r.stars)} estrelas</span><span>${esc(r.lang)}</span><span class="${la?'alerta':''}">${esc(lt)}</span>${par}</p>
+   <button class="abre" aria-expanded="false" aria-controls="${id}">Como funciona e onde agrega</button>
+   <div class="det" id="${id}" hidden><p><b>Como funciona.</b> ${esc(r.how)}</p><p><b>Onde agrega.</b> ${esc(r.value)}</p>
+    ${r.note?`<p class="av"><b>Ressalva.</b> ${esc(r.note)}</p>`:''}
+    ${r.parecer?`<p><b>Parecer: ${esc(r.parecer.tipo)}.</b> ${esc(r.parecer.texto)}</p>`:''}</div></div>
+  <a class="ir" href="${esc(r.url)}" target="_blank" rel="noopener" aria-label="Abrir ${esc(r.repo)} no GitHub"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg></a></li>`}
+function lista(){
+  const q=$('#q').value.toLowerCase().trim(),s=$('#ord').value;
+  let l=D.repos.filter(r=>noFiltro(r)&&(!q||[r.repo,r.what,r.how,r.value,r.lang,r.note||''].join(' ').toLowerCase().includes(q)));
+  if(s==='stars')l.sort((a,b)=>b.stars-a.stars);else if(s==='recent')l.sort((a,b)=>b.pushed.localeCompare(a.pushed));
+  else{const o={};D.categories.forEach((c,i)=>o[c.id]=i);l.sort((a,b)=>o[a.category]-o[b.category])}
+  $('#cnt').textContent=l.length+(l.length===1?' repositório':' repositórios')+' · posição em '+fmtD(D.generated);
+  $('#grade').innerHTML=l.length?l.slice(0,lim).map(linha).join(''):'<li class="vazio">Nenhum repositório encontrado. Limpe a busca ou escolha outra área.</li>';
+  const m=$('#mais');m.hidden=l.length<=lim;m.textContent='Mostrar mais ('+(l.length-lim)+' restantes)';
+}
+function aplicar(f){flt=f;lim=PAGE;history.replaceState(null,'',f.t==='cat'?'#'+f.id:location.pathname);filtros();lista()}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button[data-t]');
+  if(b){aplicar(b.dataset.t==='all'?{t:'all'}:{t:b.dataset.t,id:b.dataset.id});return}
+  const a=e.target.closest('.abre');
+  if(a){const d=document.getElementById(a.getAttribute('aria-controls')),o=a.getAttribute('aria-expanded')==='true';a.setAttribute('aria-expanded',!o);d.hidden=o}});
+$('#q').addEventListener('input',()=>{lim=PAGE;lista()});$('#ord').addEventListener('change',()=>{lim=PAGE;lista()});
+$('#mais').addEventListener('click',()=>{lim+=PAGE;lista()});
+fetch('data/repos.json').then(r=>r.json()).then(d=>{D=d;const h=location.hash.slice(1);if(D.categories.some(c=>c.id===h))flt={t:'cat',id:h};filtros();lista()})
+.catch(()=>{$('#grade').innerHTML='<li class="vazio">Não foi possível carregar data/repos.json. Abra pelo GitHub Pages ou rode python3 -m http.server na pasta do projeto.</li>'});
+</script>
+</body>
+</html>
