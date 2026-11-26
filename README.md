@@ -1,18 +1,20 @@
-# Radar de Repositórios
+# Jonathan Bezerra · Portfólio e Radar de Repositórios
 
-Projeto pessoal de Jonathan Bezerra.
+Site estático (HTML, CSS e JavaScript puros, sem dependências nem fontes externas) com:
+- apresentação, trajetória (linha do tempo) e projetos;
+- catálogo crítico de repositórios públicos do GitHub para contabilidade, fiscal, tributário, auditoria e automação.
 
-Catálogo curado de repositórios públicos do GitHub para contabilidade, fiscal, tributário, auditoria e automação.
-
-- `index.html`: portal estático (visão geral, filtros por categoria, busca, selos de manutenção, licença e parecer).
-- `data/repos.json`: única fonte de dados. Para adicionar um repo, inclua um item com `repo`, `category`, `what`, `how`, `value`, `note`.
-- `refresh_stats.py`: atualiza estrelas, último commit e licença (`python3 refresh_stats.py`, exige `gh` autenticado).
+## Arquivos
+- `index.html`: o site inteiro.
+- `data/perfil.json`: dados pessoais, credenciais, trajetória e projetos. Para incluir um logo, salve o arquivo em `assets/logos/` e preencha o campo `logo` do item (ex.: `"logo": "assets/logos/kpmg.svg"`). Para publicar o link de um projeto, preencha `link`.
+- `data/repos.json`: catálogo de repositórios. Itens com `status: "pendente"` não aparecem no site; a aprovação é humana.
+- `refresh_stats.py`: atualiza estrelas, data do último commit, licença e marca arquivados.
 
 ## Publicar
-Settings > Pages > Deploy from branch > `main` / root.
+Settings > Pages > Deploy from a branch > `main` / root.
 
-## Teste local
-`python3 -m http.server` e abra http://localhost:8000
+## Testar localmente
+`python3 -m http.server` na pasta e abrir http://localhost:8000.
 
-## Curadoria
-Todo repo novo entra por revisão humana: verificar licença, último commit e se há nota técnica fiscal recente.
+## Atualização quinzenal
+Um agente agendado (dias 1 e 15) atualiza as estatísticas e abre um pull request com candidatos novos como `pendente`. Nada entra no ar sem aprovação.

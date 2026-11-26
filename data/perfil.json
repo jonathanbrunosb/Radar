@@ -1,0 +1,77 @@
+{
+  "nome": "Jonathan Bezerra",
+  "linkedin": "https://www.linkedin.com/in/jonathanbsbezerra/",
+  "github": "https://github.com/jonathanbrunosb",
+  "credenciais": [
+    {"sigla": "CRC", "texto": "Contador com registro ativo no Conselho Regional de Contabilidade"},
+    {"sigla": "CNAI", "texto": "Auditor independente no Cadastro Nacional de Auditores Independentes"}
+  ],
+  "stack": ["SAP GUI Scripting", "VBA", "Python", "FastAPI", "SQLite e Postgres", "JavaScript e React", "IA aplicada"],
+  "timeline": [
+    {
+      "empresa": "Grupo Equatorial",
+      "marca": "Equatorial",
+      "logo": null,
+      "cargo": "Executivo Corporativo de Contabilidade",
+      "periodo": "Atual",
+      "texto": "Atuo na Gerência de Contabilidade de uma distribuidora de energia, com foco em controles internos, demonstrações financeiras, gestão da auditoria externa, inventário e conformidade regulatória. Levo a automação e a análise de dados para a rotina do fechamento.",
+      "tags": ["Controles internos", "Demonstrações financeiras", "Auditoria externa", "Inventário", "Regulatório"]
+    },
+    {
+      "empresa": "KPMG",
+      "marca": "KPMG",
+      "logo": null,
+      "cargo": "Auditoria externa",
+      "periodo": "Mais de 3 anos",
+      "texto": "Mais de três anos em auditoria externa. Foi aqui que a visão de risco, de evidência e de controle virou método de trabalho, e é a lente que uso hoje ao desenhar processos e sistemas.",
+      "tags": ["Auditoria externa", "Controles", "Evidência"]
+    },
+    {
+      "empresa": "Primo's Sports",
+      "marca": "Primo's",
+      "logo": null,
+      "cargo": "Fundador",
+      "periodo": "Negócio próprio",
+      "texto": "Varejo de camisas de times e seleções, com vendas por Instagram e WhatsApp, operação em Recife e Maceió e envio para todo o Brasil. É o meu laboratório de empreendedorismo, catálogo e conteúdo.",
+      "tags": ["Varejo", "Operação", "Conteúdo digital"]
+    }
+  ],
+  "projetos": [
+    {
+      "nome": "ContaProva",
+      "tipo": "Sistema contábil",
+      "status": "Em construção",
+      "texto": "Sistema voltado à rotina contábil, com módulo de folha de pagamento no roteiro.",
+      "link": null,
+      "tags": ["Contabilidade", "Folha de pagamento"],
+      "visual": "razao"
+    },
+    {
+      "nome": "Vira-Bolso",
+      "tipo": "Solução digital",
+      "status": "Em construção",
+      "texto": "Descrição em preparação. O projeto ainda está sendo finalizado e este cartão será atualizado com o que ele faz.",
+      "link": null,
+      "tags": ["Em desenvolvimento"],
+      "visual": "moeda"
+    },
+    {
+      "nome": "Radar de Repositórios",
+      "tipo": "Curadoria",
+      "status": "No ar",
+      "texto": "Catálogo crítico de repositórios públicos do GitHub para contabilidade, fiscal, tributário, auditoria e automação, atualizado a cada 15 dias por um agente com aprovação humana.",
+      "link": "#repositorios",
+      "tags": ["GitHub", "Automação", "Curadoria"],
+      "visual": "rede"
+    },
+    {
+      "nome": "Primo's Sports",
+      "tipo": "Negócio digital",
+      "status": "Em operação",
+      "texto": "Loja de camisas de futebol com vitrine mobile, vídeos promocionais próprios e atendimento por WhatsApp.",
+      "link": null,
+      "tags": ["Varejo", "Vídeo", "WhatsApp"],
+      "visual": "camisa"
+    }
+  ]
+}
