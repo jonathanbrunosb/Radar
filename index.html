@@ -271,6 +271,7 @@ footer strong{color:#fff;font-size:18px;letter-spacing:-.02em}
 </main>
 <footer><div class="wrap"><strong>Jonathan Bezerra</strong><span>Portfólio pessoal. As opiniões e análises aqui são minhas e não representam nenhuma empresa.</span></div></footer>
 
+<script src="assets/thumbs.js"></script>
 <script>
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -293,7 +294,8 @@ function mapa(){
     ['Automação','SAP GUI Scripting, Python e rotinas que eliminam trabalho manual.'],
     ['IA aplicada','Agentes e modelos onde geram ganho real e medido, não por moda.'],
     ['Sistemas','Aplicações próprias com FastAPI, bancos SQL e interfaces web.']];
-  let W,H,dpr,t=0,mx=-999,my=-999,hov=-1,vis=true,raf=0;
+  let W,H,dpr,t=0,mx=-999,my=-999,hov=-1,vis=true,raf=0,foto=null;
+  window.setMapaFoto=src=>{const i=new Image();i.onload=()=>{foto=i;draw()};i.src=src};
   const P=Array.from({length:30},(_,i)=>({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0006,vy:(Math.random()-.5)*.0006}));
   const N=AREAS.map((a,i)=>({a:a[0],d:a[1],ang:i/AREAS.length*Math.PI*2-Math.PI/2,x:0,y:0}));
   function size(){dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);draw()}
@@ -312,9 +314,12 @@ function mapa(){
       ctx.strokeStyle=on?'rgba(27,92,240,.8)':'rgba(10,26,58,.16)';ctx.lineWidth=on?2:1.2;
       ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(n.x,n.y);ctx.stroke();
       ctx.strokeStyle='rgba(10,26,58,.08)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(n.x,n.y);ctx.lineTo(m.x,m.y);ctx.stroke();});
-    // centro
-    ctx.fillStyle='#0A1A3A';ctx.beginPath();ctx.arc(cx,cy,32,0,7);ctx.fill();
-    ctx.fillStyle='#fff';ctx.font='800 20px system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('JB',cx,cy+1);
+    // centro: foto
+    const rc=40;ctx.save();ctx.shadowColor='rgba(10,26,58,.28)';ctx.shadowBlur=18;ctx.shadowOffsetY=6;ctx.fillStyle='#0A1A3A';ctx.beginPath();ctx.arc(cx,cy,rc+4,0,7);ctx.fill();ctx.restore();
+    if(foto){ctx.save();ctx.beginPath();ctx.arc(cx,cy,rc,0,7);ctx.clip();ctx.drawImage(foto,150,70,340,340,cx-rc,cy-rc,rc*2,rc*2);ctx.restore()}
+    else{ctx.fillStyle='#0A1A3A';ctx.beginPath();ctx.arc(cx,cy,rc,0,7);ctx.fill();ctx.fillStyle='#fff';ctx.font='800 20px system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('JB',cx,cy+1)}
+    ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(cx,cy,rc+1,0,7);ctx.stroke();
+    ctx.textAlign='center';ctx.textBaseline='middle';
     // nós
     ctx.font='700 14.5px system-ui,sans-serif';
     N.forEach((n,i)=>{const on=hov===i,r=on?15:11;
@@ -349,7 +354,7 @@ function pagina(P,R){
   $('#cred').innerHTML=P.credenciais.map(c=>`<div><b>${esc(c.sigla)}</b><span>${esc(c.texto)}</span></div>`).join('');
   $('#nrep').dataset.n=R.repos.filter(r=>r.status!=='pendente').length;
   $('#lk').href=P.linkedin;$('#gh').href=P.github;
-  $('#foto').src=P.foto;
+  $('#foto').src=P.foto;setMapaFoto(P.foto);
   $('#tl').innerHTML=P.timeline.map(i=>`<div class="it"><div class="lg"><img src="${esc(i.logo)}" alt="Logo ${esc(i.empresa)}"></div>
    <div class="cd"><h3>${esc(i.empresa)}</h3><p class="tt">${esc(i.periodo)}${i.atual?'<span class="pe">Atual</span>':''}</p>
    <div class="cs">${i.cargos.map(c=>`<div class="cg"><h4>${esc(c.cargo)}</h4><p class="lc">${esc(c.periodo)}${c.local?' · '+esc(c.local):''}</p>${c.texto?`<p>${esc(c.texto)}</p>`:''}</div>`).join('')}</div>
@@ -357,7 +362,7 @@ function pagina(P,R){
   const L=(t,a)=>`<div><h3>${t}</h3><ul>${a.map(x=>`<li><b>${esc(x.titulo)}</b><span>${esc(x.instituicao)} · ${esc(x.periodo)}</span></li>`).join('')}</ul></div>`;
   $('#edu').innerHTML=L('Formação',P.formacao)+L('Certificações',P.certificacoes);
   const V={
-   razao:'<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><rect width="300" height="150" fill="#E8EFFE"/><g stroke="#0A1A3A" stroke-width="2.4" fill="none"><path d="M60 38h180M150 38v82"/><path d="M60 70h60M180 70h60M60 96h60M180 96h60" stroke="#1B5CF0"/></g><text x="86" y="30" font-size="14" font-weight="800" fill="#0A1A3A" font-family="system-ui">D</text><text x="205" y="30" font-size="14" font-weight="800" fill="#0A1A3A" font-family="system-ui">C</text></svg>',
+   razao:'<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><rect width="300" height="150" fill="#E8EFFE"/><g stroke="#0A1A3A" stroke-width="2.4" fill="none"><path d="M60 38h180M150 38v82"/><path d="M60 70h60M180 70h60M60 96h60M180 96h60" stroke="#1B5CF0"/></g></svg>',
    moeda:'<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><rect width="300" height="150" fill="#D6F5E3"/><circle cx="150" cy="75" r="42" fill="#fff" stroke="#0A1A3A" stroke-width="2.4"/><path d="M150 52v46M138 64c0-8 24-8 24 0s-24 8-24 18 24 10 24 2" stroke="#0A1A3A" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>',
    rede:'<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><rect width="300" height="150" fill="#1B1B1D"/><g stroke="#38383B"><path d="M60 0v150M120 0v150M180 0v150M240 0v150M0 50h300M0 100h300"/></g><rect x="40" y="30" width="110" height="24" fill="#1B5CF0"/><rect x="95" y="68" width="120" height="24" fill="#fff"/><rect x="150" y="106" width="100" height="24" fill="#1B5CF0"/></svg>',
    camisa:'<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><rect width="300" height="150" fill="#E8EFFE"/><path d="M105 30l-40 22 14 26 16-8v62h110V70l16 8 14-26-40-22c-6 12-18 18-45 18s-39-6-45-18z" fill="#fff" stroke="#0A1A3A" stroke-width="2.4" stroke-linejoin="round"/><path d="M118 52h64" stroke="#1B5CF0" stroke-width="5" stroke-linecap="round"/></svg>'};
@@ -372,15 +377,7 @@ const PAGE=12;let D=null,flt='all',lim=PAGE;
 function status(iso){const d=dias(iso);return d<=120?['ok','Ativo']:d<=365?['morno','Morno']:['parado','Parado']}
 function licenca(l){if(l==='none'||l==='NOASSERTION')return['Verificar licença',true];if(/GPL/.test(l))return[l+' (copyleft)',true];return[l,false]}
 const grp=id=>D.categories.find(c=>c.id===id).code.split('.')[0];
-function thumb(r){
-  const h=hash(r.repo),cod=grp(r.category);
-  if(cod==='1'||cod==='2'){const ys=[0,1,2,3].map(i=>150-(i*28)-rnd(h,i,6,34)),xs=[34,120,214,300],pts=xs.map((x,i)=>[x,Math.max(30,ys[i])]);
-    const d=`M${pts[0]} C${pts[0][0]+50},${pts[0][1]} ${pts[1][0]-40},${pts[1][1]} ${pts[1]} S${pts[2][0]-40},${pts[2][1]} ${pts[2]} S${pts[3][0]-40},${pts[3][1]} ${pts[3]}`;
-    return `<svg viewBox="0 0 368 176" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="368" height="176" fill="#D6F5E3"/><path d="M20 14V156H350" stroke="#0A1A3A" stroke-width="1.6" fill="none"/>${xs.map(x=>`<path d="M${x} 156v8" stroke="#0A1A3A" stroke-width="1.6"/>`).join('')}<path d="${d}" stroke="#0A1A3A" stroke-width="2" fill="none"/>${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="#0A1A3A"/>`).join('')}</svg>`}
-  if(cod==='5'){const hl=1+(h%3);const ln=[0,1,2,3].map(i=>{const w=rnd(h,i,150,290),y=30+i*30;return i===hl?`<rect x="30" y="${y-18}" width="${w+10}" height="26" fill="#1B5CF0"/><rect x="36" y="${y-8}" width="${w-6}" height="6" rx="3" fill="#fff"/>`:`<rect x="36" y="${y-8}" width="${w-20}" height="6" rx="3" fill="#E9E9EB"/>`}).join('');
-    return `<svg viewBox="0 0 368 176" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="368" height="176" fill="#1B1B1D"/>${ln}<path d="M32 140l14 8-14 8z" fill="#fff"/><rect x="62" y="146" width="276" height="5" fill="#8d8d90"/><rect x="62" y="146" width="${rnd(h,5,40,160)}" height="5" fill="#1B5CF0"/></svg>`}
-  const bars=[0,1,2].map(i=>{const x=rnd(h,i,22,170),w=rnd(h,i+3,90,170);return `<rect x="${x}" y="${28+i*46}" width="${Math.min(w,340-x)}" height="26" fill="${i===1?'#fff':'#1B5CF0'}"/>`}).join('');
-  return `<svg viewBox="0 0 368 176" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="368" height="176" fill="#1B1B1D"/>${[1,2,3,4,5,6,7,8].map(i=>`<path d="M${i*41} 0v176" stroke="#38383B"/>`).join('')}${[1,2,3].map(i=>`<path d="M0 ${i*44}h368" stroke="#38383B"/>`).join('')}${bars}<rect x="${rnd(h,6,150,250)}" y="0" width="2" height="176" fill="#fff"/></svg>`}
+const thumb=r=>THUMB(r);
 const visiveis=()=>D.repos.filter(r=>r.status!=='pendente');
 function pilulas(){const V=visiveis();
   $('#pil').innerHTML=`<button data-c="all" aria-pressed="${flt==='all'}">Todos<span class="n">${V.length}</span></button>`+D.categories.map(c=>`<button data-c="${c.id}" aria-pressed="${flt===c.id}" title="${esc(c.desc)}">${esc(c.name)}<span class="n">${V.filter(r=>r.category===c.id).length}</span></button>`).join('')}
