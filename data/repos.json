@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26",
+ "generated": "2026-11-27",
  "categories": [
   {
    "id": "fiscal",
@@ -90,6 +90,13 @@
    "name": "SEO e marketing",
    "desc": "Pesquisa de palavras-chave e posição no Google.",
    "code": "5.3",
+   "group": "Conteúdo e produtividade"
+  },
+  {
+   "id": "apresentacoes",
+   "name": "Apresentações",
+   "desc": "Montar decks em PowerPoint, em código ou com IA, e transformar em vídeo.",
+   "code": "5.4",
    "group": "Conteúdo e produtividade"
   }
  ],
@@ -1149,6 +1156,310 @@
     "tipo": "com ressalva",
     "texto": "Útil se você acompanha SEO de verdade. Senão, é custo à toa."
    }
+  },
+  {
+   "stars": 253,
+   "pushed": "2026-10-14",
+   "license": "MIT",
+   "lang": "TypeScript",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "singerla/pptx-automizer",
+   "category": "apresentacoes",
+   "what": "Gera apresentações PowerPoint a partir de modelos .pptx que você já tem, trocando textos, tabelas, gráficos e imagens por código.",
+   "how": "Você importa os slides do seu modelo corporativo, escolhe quais usar e o código preenche cada elemento com dados. Quando falta um elemento, ele usa o PptxGenJS para criar. O arquivo final é um .pptx comum.",
+   "value": "Deck mensal de resultados ou de fechamento que sai sempre no padrão visual aprovado, com os números vindos de planilha ou sistema, sem refazer slide à mão.",
+   "note": "Projeto pequeno, com 253 estrelas, então o risco de abandono é real. Exige que o modelo seja bem montado (layouts e nomes de formas). Não cria design sozinho: quem define o visual é você.",
+   "parecer": {
+    "tipo": "sem ressalva",
+    "texto": "Melhor caminho para deck recorrente com marca padronizada e dados automáticos."
+   },
+   "url": "https://github.com/singerla/pptx-automizer"
+  },
+  {
+   "stars": 3500,
+   "pushed": "2024-08-07",
+   "license": "MIT",
+   "lang": "Python",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "scanny/python-pptx",
+   "category": "apresentacoes",
+   "what": "Biblioteca Python para criar e editar arquivos PowerPoint (.pptx).",
+   "how": "Abre um .pptx, acessa slides, formas, tabelas e gráficos como objetos Python e salva o resultado. Funciona com um modelo existente como ponto de partida.",
+   "value": "Preencher decks a partir de Excel ou de dados do ERP, com o mesmo padrão visual toda vez. Combina com scripts de fechamento que já estejam em Python.",
+   "note": "Último commit em agosto de 2024, então está parado. Funciona e é a base de muita coisa, mas não acompanha recursos novos do PowerPoint. Não renderiza slide para conferir o visual.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Base estável e conhecida, só que sem manutenção recente."
+   },
+   "url": "https://github.com/scanny/python-pptx"
+  },
+  {
+   "stars": 6100,
+   "pushed": "2025-06-25",
+   "license": "MIT",
+   "lang": "TypeScript",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "gitbrent/PptxGenJS",
+   "category": "apresentacoes",
+   "what": "Biblioteca JavaScript para criar apresentações PowerPoint no navegador ou no Node.js.",
+   "how": "Você descreve slides, textos, tabelas, gráficos e imagens em código e ele monta o .pptx. Roda no navegador, o que permite gerar o deck dentro de um sistema web sem servidor.",
+   "value": "Botão \"Exportar para PowerPoint\" em dashboard ou portal interno, com o deck montado no próprio navegador do usuário.",
+   "note": "Último commit em junho de 2025, mais de um ano sem atualização. É a base do pptx-automizer e de várias ferramentas, o que reduz o risco, mas não elimina.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Boa para gerar deck dentro de um sistema web, com a ressalva de manutenção lenta."
+   },
+   "url": "https://github.com/gitbrent/PptxGenJS"
+  },
+  {
+   "stars": 58,
+   "pushed": "2026-11-10",
+   "license": "MIT",
+   "lang": "Python",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "ykuwai/ppt-mcp",
+   "category": "apresentacoes",
+   "what": "Servidor MCP que deixa um assistente de IA controlar o PowerPoint aberto no computador (Windows e macOS).",
+   "how": "Em vez de gerar um arquivo, ele comanda o próprio PowerPoint por automação do aplicativo. O assistente cria slides, edita formas e aplica formatação no deck que você está vendo.",
+   "value": "Pedir à IA para ajustar um deck já aberto, como padronizar fontes, reorganizar slides ou aplicar o layout do modelo da empresa.",
+   "note": "Só 58 estrelas e projeto recente. Precisa do PowerPoint instalado e a IA mexe no arquivo real: sempre trabalhe em cópia. Dados do deck passam pelo assistente de IA, o que exige atenção em material confidencial.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Interessante para editar deck existente. Testar apenas em cópia e sem dado sensível."
+   },
+   "url": "https://github.com/ykuwai/ppt-mcp"
+  },
+  {
+   "stars": 11200,
+   "pushed": "2026-11-23",
+   "license": "Apache-2.0",
+   "lang": "Python",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "presenton/presenton",
+   "category": "apresentacoes",
+   "what": "Gerador de apresentações com IA que roda na sua máquina ou servidor e exporta PowerPoint editável.",
+   "how": "Você escreve um tema ou envia um documento e ele monta os slides com um modelo de IA de sua escolha, incluindo opções locais como Ollama. Tem editor para ajustes, modelos prontos, instalação por Docker ou aplicativo e uma API.",
+   "value": "Transformar um relatório ou parecer em deck executivo em minutos, sem mandar o conteúdo para uma plataforma de terceiros quando se usa modelo local.",
+   "note": "Com modelo em nuvem, o conteúdo vai para o provedor escolhido e o custo de uso é seu. O resultado precisa de revisão de texto e de número antes de circular.",
+   "parecer": {
+    "tipo": "sem ressalva",
+    "texto": "Alternativa aberta e auditável aos geradores de deck por assinatura."
+   },
+   "url": "https://github.com/presenton/presenton"
+  },
+  {
+   "stars": 71300,
+   "pushed": "2026-11-20",
+   "license": "MIT",
+   "lang": "Python",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "hugohe3/ppt-master",
+   "category": "apresentacoes",
+   "what": "Fluxo para agentes de IA que transforma documentos ou temas em PowerPoint nativo e editável, com layouts, formas e gráficos.",
+   "how": "Você usa um agente de código (Claude Code, Cursor, Copilot e outros) que segue os scripts e instruções do projeto para montar o deck página a página. O arquivo sai como .pptx com elementos nativos.",
+   "value": "Gerar apresentação a partir de um relatório, com gráficos e tabelas editáveis, usando o assistente que você já tem.",
+   "note": "Estrelas muito altas para um projeto novo, então há efeito de divulgação. O README mistura patrocínios e divulgação pessoal do autor. O próprio projeto admite alto consumo de tokens. Teste com um caso real antes de confiar.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Promissor, mas valide com um deck seu antes de adotar. Custo de uso e hype pedem cautela."
+   },
+   "url": "https://github.com/hugohe3/ppt-master"
+  },
+  {
+   "stars": 5000,
+   "pushed": "2026-11-08",
+   "license": "MIT",
+   "lang": "Python",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "icip-cas/PPTAgent",
+   "category": "apresentacoes",
+   "what": "Framework de pesquisa que gera apresentações e revisa o próprio resultado, agora com habilidade para Claude Code, Codex e OpenCode.",
+   "how": "Um agente monta o deck, exporta para PowerPoint e usa um modelo com visão para revisar o visual. Roda em Linux ou macOS e depende do LibreOffice para renderizar.",
+   "value": "Revisão automática de qualidade visual do deck gerado, que é a parte que a maioria das ferramentas deixa para o usuário.",
+   "note": "Origem acadêmica, então o foco é pesquisa e não uso corporativo. A instalação é mais pesada (LibreOffice, Node e uv) e não cobre Windows nativo.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Útil como referência de revisão automática. Para uso diário, prefira ferramentas mais simples."
+   },
+   "url": "https://github.com/icip-cas/PPTAgent"
+  },
+  {
+   "stars": 15600,
+   "pushed": "2026-11-25",
+   "license": "AGPL-3.0",
+   "lang": "Python",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "Anionex/banana-slides",
+   "category": "apresentacoes",
+   "what": "Aplicativo que gera decks por IA a partir de ideia, roteiro, documento ou modelo visual, com exportação em PPTX, PDF e vídeo.",
+   "how": "A IA gera cada slide como imagem e organiza o conjunto. A exportação padrão para PPTX usa imagens; a exportação editável ainda está em fase beta e pode depender de serviço de terceiros.",
+   "value": "Montar rapidamente um deck visual de apresentação comercial ou de ideia, com narração em vídeo.",
+   "note": "Licença AGPL-3.0: se modificar e oferecer como serviço, você precisa abrir o código. Não serve para embutir em produto fechado. Slide em imagem não se edita no PowerPoint. Para uso corporativo sério, o jurídico precisa avaliar.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Bom para protótipo visual. A licença e o PPTX em imagem limitam o uso corporativo."
+   },
+   "url": "https://github.com/Anionex/banana-slides"
+  },
+  {
+   "stars": 373,
+   "pushed": "2026-10-26",
+   "license": "MIT",
+   "lang": "Python",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "barun-saha/slide-deck-ai",
+   "category": "apresentacoes",
+   "what": "Gera um deck PowerPoint a partir de um tema, com interface web simples e modelos de IA configuráveis.",
+   "how": "Você descreve o tema, o modelo de IA monta o conteúdo em formato estruturado e o programa converte para .pptx usando modelos de layout.",
+   "value": "Rascunho rápido de estrutura e conteúdo para depois refinar no PowerPoint.",
+   "note": "Projeto pequeno (373 estrelas) e de um mantenedor. Layout simples. Serve de ponto de partida, não de entrega final.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Simples e com licença livre, mas o resultado exige acabamento manual."
+   },
+   "url": "https://github.com/barun-saha/slide-deck-ai"
+  },
+  {
+   "stars": 6100,
+   "pushed": "2026-11-27",
+   "license": "MIT",
+   "lang": "TypeScript",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "quarto-dev/quarto-cli",
+   "category": "apresentacoes",
+   "what": "Sistema de publicação da Posit que gera relatórios, sites e apresentações a partir de um mesmo texto em Markdown com código.",
+   "how": "Você escreve o conteúdo em .qmd com blocos de Python, R ou SQL. O Quarto executa o código e exporta a apresentação em HTML (reveal.js), PowerPoint, PDF e outros formatos, inclusive com modelo .pptx de referência.",
+   "value": "Deck e relatório que se atualizam sozinhos: os números e gráficos vêm do código, então rodar de novo refaz tudo. Vale como trilha de evidência do que foi apresentado.",
+   "note": "Curva de aprendizado para quem não programa. O PowerPoint gerado herda estilo do modelo de referência e tem menos recursos de design que o HTML. O repositório avisa que há exceções à licença MIT em componentes específicos.",
+   "parecer": {
+    "tipo": "sem ressalva",
+    "texto": "Melhor opção para deck reprodutível com dados e código, com saída em PowerPoint."
+   },
+   "url": "https://github.com/quarto-dev/quarto-cli"
+  },
+  {
+   "stars": 3900,
+   "pushed": "2026-09-08",
+   "license": "MIT",
+   "lang": "TypeScript",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "marp-team/marp-cli",
+   "category": "apresentacoes",
+   "what": "Converte apresentações escritas em Markdown para HTML, PDF, imagens e PowerPoint pela linha de comando.",
+   "how": "Você escreve um arquivo de texto, separa os slides por linha e o Marp aplica um tema. O PowerPoint gerado por padrão traz páginas como imagem de fundo; há modo editável experimental.",
+   "value": "Deck simples e versionável em Git, muito rápido para montar.",
+   "note": "O PPTX padrão não é editável, só serve para apresentar. O modo editável é experimental. Exige navegador instalado para exportar. Para quem precisa entregar arquivo editável ao cliente, não resolve.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Ótimo para deck em texto e PDF. Para PowerPoint editável, não é o caminho."
+   },
+   "url": "https://github.com/marp-team/marp-cli"
+  },
+  {
+   "stars": 48400,
+   "pushed": "2026-11-27",
+   "license": "MIT",
+   "lang": "TypeScript",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "slidevjs/slidev",
+   "category": "apresentacoes",
+   "what": "Ferramenta de apresentações para desenvolvedores: slides em Markdown com componentes, código e animações, rodando no navegador.",
+   "how": "Você escreve em Markdown e usa componentes Vue para gráficos, diagramas e demos ao vivo. Exporta para PDF, PNG e PPTX (pela interface, o PPTX sai como imagens; o PPTX editável só pela linha de comando) e publica como site.",
+   "value": "Apresentação técnica com demonstração de sistema ao vivo, por exemplo mostrar um dashboard ou fluxo de automação dentro do slide.",
+   "note": "Pensado para equipes técnicas: o público de contabilidade e diretoria provavelmente não edita o arquivo. A exportação precisa do Playwright instalado e o PPTX editável é só pelo terminal.",
+   "parecer": {
+    "tipo": "sem ressalva",
+    "texto": "Excelente para apresentação interativa com demonstração. Menos indicado para quem edita no PowerPoint."
+   },
+   "url": "https://github.com/slidevjs/slidev"
+  },
+  {
+   "stars": 72200,
+   "pushed": "2026-09-30",
+   "license": "MIT",
+   "lang": "JavaScript",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "hakimel/reveal.js",
+   "category": "apresentacoes",
+   "what": "Framework clássico de apresentações em HTML, com navegação, animações automáticas, notas do orador e exportação para PDF.",
+   "how": "Slides são páginas HTML (ou Markdown) abertas no navegador. Funciona offline, com slides verticais, fragmentos, tema e plugins.",
+   "value": "Apresentação interativa pronta para incluir em portal ou intranet, como um deck navegável que o usuário percorre sozinho.",
+   "note": "Exige noção de HTML. O editor visual para reveal.js é um serviço separado (Slides.com) da mesma equipe, fora do código aberto.",
+   "parecer": {
+    "tipo": "sem ressalva",
+    "texto": "Padrão consolidado para apresentação em HTML. Serve de base para outras ferramentas."
+   },
+   "url": "https://github.com/hakimel/reveal.js"
+  },
+  {
+   "stars": 91000,
+   "pushed": "2026-11-27",
+   "license": "Apache-2.0",
+   "lang": "TypeScript",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "heygen-com/hyperframes",
+   "category": "apresentacoes",
+   "what": "Framework de código aberto que transforma HTML, CSS e JavaScript em vídeos MP4, com ferramentas para agentes de IA.",
+   "how": "Você descreve a cena em HTML com animações e ele renderiza o vídeo quadro a quadro de forma determinística. Funciona por linha de comando ou dentro de agentes como Claude Code.",
+   "value": "Transformar um deck ou resumo de resultados em vídeo curto padronizado, repetível mês a mês, sem abrir editor de vídeo.",
+   "note": "É de uma empresa que vende produto de vídeo com IA, e o README faz funil para ele. O código aberto é Apache-2.0, mas confira o que é gratuito. Estrelas muito altas para a idade, então vale testar antes de depender. Exige Node 22 ou superior.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Bom caminho para vídeo de apresentação por código. Teste com um caso real antes de adotar."
+   },
+   "url": "https://github.com/heygen-com/hyperframes"
+  },
+  {
+   "stars": 4100,
+   "pushed": "2026-07-15",
+   "license": "MIT",
+   "lang": "TypeScript",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "redotvideo/revideo",
+   "category": "apresentacoes",
+   "what": "Biblioteca para criar vídeos por código em TypeScript, derivada do Motion Canvas, com renderização em servidor e API.",
+   "how": "Você descreve cenas, animações e áudio em código. O Revideo renderiza o MP4 e pode ser chamado como serviço para gerar vídeos em volume.",
+   "value": "Gerar vídeos de resultado em série a partir de dados, com licença livre. Alternativa ao Remotion sem restrição de uso comercial.",
+   "note": "Mais exigente que HTML puro: pede conhecimento de TypeScript. Último commit em julho de 2026, ritmo mais lento. Comunidade menor que a do Remotion.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Alternativa de licença livre para vídeo por código."
+   },
+   "url": "https://github.com/redotvideo/revideo"
+  },
+  {
+   "stars": 9800,
+   "pushed": "2025-08-06",
+   "license": "Apache-2.0",
+   "lang": "Python",
+   "status": "pendente",
+   "added": "2026-11-27",
+   "repo": "hexgrad/kokoro",
+   "category": "apresentacoes",
+   "what": "Modelo de voz sintética leve, de código aberto, que lê texto em voz natural, inclusive em português do Brasil.",
+   "how": "Roda localmente em Python: você passa o texto e o código de idioma e recebe o áudio. Tem vozes em vários idiomas, com português brasileiro.",
+   "value": "Narração automática de deck em vídeo, sem estúdio e sem enviar o roteiro para um serviço externo.",
+   "note": "Último commit em agosto de 2025, ou seja, parado há mais de um ano. Ouça o português brasileiro antes de adotar. Não use voz sintética imitando pessoa real sem autorização.",
+   "parecer": {
+    "tipo": "com ressalva",
+    "texto": "Narração local e gratuita para vídeo. Ouça o português antes de adotar."
+   },
+   "url": "https://github.com/hexgrad/kokoro"
   }
  ]
 }

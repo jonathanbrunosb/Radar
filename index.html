@@ -380,7 +380,7 @@ const grp=id=>D.categories.find(c=>c.id===id).code.split('.')[0];
 const thumb=r=>THUMB(r);
 const visiveis=()=>D.repos.filter(r=>r.status!=='pendente');
 function pilulas(){const V=visiveis();
-  $('#pil').innerHTML=`<button data-c="all" aria-pressed="${flt==='all'}">Todos<span class="n">${V.length}</span></button>`+D.categories.map(c=>`<button data-c="${c.id}" aria-pressed="${flt===c.id}" title="${esc(c.desc)}">${esc(c.name)}<span class="n">${V.filter(r=>r.category===c.id).length}</span></button>`).join('')}
+  $('#pil').innerHTML=`<button data-c="all" aria-pressed="${flt==='all'}">Todos<span class="n">${V.length}</span></button>`+D.categories.filter(c=>V.some(r=>r.category===c.id)).map(c=>`<button data-c="${c.id}" aria-pressed="${flt===c.id}" title="${esc(c.desc)}">${esc(c.name)}<span class="n">${V.filter(r=>r.category===c.id).length}</span></button>`).join('')}
 function linha(r,i){const [sc,st]=status(r.pushed),[lt,la]=licenca(r.license),[own,nm]=r.repo.split('/'),id='d'+i;
   const par=r.parecer?`<span class="par">Parecer: ${esc(r.parecer.tipo)}</span>`:(r.note?'<span class="par">Com ressalva</span>':'');
   return `<li class="lin"><a class="th" href="${esc(r.url)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">${thumb(r)}</a>

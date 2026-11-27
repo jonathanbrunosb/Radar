@@ -15,6 +15,7 @@ const Ck=(x,y,r=13,f=C)=>Ci(x,y,r,f,N)+P(`M${x-r*.45} ${y}l${r*.3} ${r*.35} ${r*
 const Cyl=(x,y,w,h,f=W)=>`<path d="M${x} ${y+10}v${h-20}a${w/2} 10 0 0 0 ${w} 0v${-(h-20)}" fill="${f}" stroke="${N}" stroke-width="2.4"/><ellipse cx="${x+w/2}" cy="${y+10}" rx="${w/2}" ry="10" fill="${f}" stroke="${N}" stroke-width="2.4"/><path d="M${x} ${y+h*.45}a${w/2} 10 0 0 0 ${w} 0" fill="none" stroke="${N}" stroke-width="2"/>`;
 const Win=(x,y,w,h,f=W)=>R(x,y,w,h,{r:10,f})+Ci(x+14,y+12,3.2,RD,RD,0)+Ci(x+26,y+12,3.2,'#F5B83D','#F5B83D',0)+Ci(x+38,y+12,3.2,'#3DBE7A','#3DBE7A',0)+P(`M${x} ${y+24}h${w}`,{sw:1.6});
 const Bars=(x,y,n,gap,w,hs,f=B,base=false)=>hs.map((v,i)=>`<rect x="${x+i*gap}" y="${y-v}" width="${w}" height="${v}" rx="2" fill="${f}"/>`).join('');
+const SL=(x,y,w,h,b)=>R(x,y,w,h,{r:6})+Ln(x+10,y+10,w*.4,B,6)+(b?Bars(x+12,y+h-10,4,Math.round((w-30)/4),Math.round((w-30)/4)-6,[h*.18,h*.34,h*.26,h*.42].map(Math.round),C):Ln(x+10,y+24,w*.6)+Ln(x+10,y+36,w*.45));
 const V=(h,i,a,b)=>a+((h>>>(i*3))%100)/100*(b-a);
 
 const S={
@@ -62,12 +63,20 @@ transcr:h=>Array.from({length:12},(_,i)=>{const v=8+Math.abs(Math.sin(i*.9+V(h,1
 wordtime:h=>[0,1].map(r=>[0,1,2].map(c=>{const x=36+c*104,y=24+r*60;return R(x,y,92,28,{r:8,f:c===1&&r===0?B:W,s:c===1&&r===0?B:N})+Ln(x+12,y+11,V(h,r*3+c,34,60),c===1&&r===0?W:N,6)+T(x+46,y+44,'00:'+(r*9+c*4+3).toString().padStart(2,'0'),{z:11,w:700,f:'#4b5a7d',a:'middle',m:1})}).join('')).join('')+Ci(330,38,12,M)+T(330,43,'A',{z:13,a:'middle'})+Ci(330,98,12,L)+T(330,103,'B',{z:13,a:'middle'}),
 legenda:h=>R(46,12,276,98,{r:10,f:N,s:N})+Ci(184,48,16,'none',W,2.4)+P('M179 40l14 8-14 8z',{f:W,s:W,sw:1})+R(96,80,176,22,{r:5,f:'rgba(0,0,0,.6)',s:W,sw:1.4})+Ln(108,89,152,W,4)+P('M46 124H322',{sw:2})+[0,1,2,3,4,5].map(i=>`<rect x="${70+i*44}" y="114" width="26" height="10" rx="3" fill="${i===2?B:C}"/>`).join(''),
 editor:h=>R(26,12,316,122,{r:10,f:L})+P('M26 36H342',{sw:1.8})+[0,1,2].map(r=>[[40,70],[130,48],[190,90]].map(([x,w],i)=>`<rect x="${x+((r*37+i*11)%25)}" y="${46+r*27}" width="${w-(r*i%2)*10}" height="20" rx="4" fill="${[B,C,N][(r+i)%3]}" stroke="${N}" stroke-width="2"/>`).join('')).join('')+`<rect x="${V(h,2,150,230)}" y="22" width="2.6" height="106" fill="${RD}"/>`+Ci(V(h,2,150,230)+1.3,24,5,RD,RD,0),
-codevideo:h=>Win(22,16,152,108)+[0,1,2,3].map(i=>Ln(38+(i%2)*10,46+i*16,V(h,i,50,92),[B,C,N,B][i],6)).join('')+Ar(184,70,214,70,B)+R(222,30,114,80,{r:8,f:N,s:N})+P('M262 52l30 18-30 18z',{f:W,s:W,sw:1})+T(279,106,'React',{z:12,f:W,a:'middle'}),
+codevideo:(lab)=>h=>Win(22,16,152,108)+[0,1,2,3].map(i=>Ln(38+(i%2)*10,46+i*16,V(h,i,50,92),[B,C,N,B][i],6)).join('')+Ar(184,70,214,70,B)+R(222,30,114,80,{r:8,f:N,s:N})+P('M262 52l30 18-30 18z',{f:W,s:W,sw:1})+T(279,106,lab||'React',{z:12,f:W,a:'middle'}),
 live:h=>R(54,14,260,106,{r:12,f:N,s:N})+R(70,26,52,20,{r:10,f:RD,s:RD})+T(96,41,'LIVE',{z:12,f:W,a:'middle'})+P('M184 52l30 18-30 18z',{f:W,s:W,sw:1})+P('M268 42a12 12 0 0 1 12 -12M268 54a24 24 0 0 1 24 -24',{s:W,sw:2}),
 agenda:h=>R(60,12,248,118,{r:12})+R(60,12,248,28,{r:12,f:B,s:N})+T(184,32,'novembro',{z:13,f:W,a:'middle'})+Array.from({length:15},(_,i)=>{const x=76+(i%5)*46,y=50+Math.floor(i/5)*26,s=i===7;return R(x,y,36,20,{r:5,f:s?M:W,s:s?C:'#C8D5F0',sw:s?2.4:1.4})}).join('')+Ci(300,124,16,W,B,3)+P('M300 114V124L307 128',{s:B,sw:2.4}),
 chat:h=>Ci(36,42,14,L)+Ci(36,42,5,B,N,0)+R(58,22,150,40,{r:14})+Ln(72,36,100)+Ln(72,48,70,C)+R(160,74,150,40,{r:14,f:B,s:B})+Ln(174,88,100,W)+Ln(174,100,60,'#BFD0F7')+Ci(332,94,14,M)+Ci(332,94,5,C,N,0),
 notas:h=>R(66,12,236,122,{r:10})+Ln(84,26,90,N,8)+[0,1,2,3].map(i=>R(84,50+i*20,14,14,{r:3,f:i<2?B:W,s:i<2?B:N,sw:2})+(i<2?P(`M87 ${57+i*20}l3 3 6-7`,{s:W,sw:2}):'')+Ln(108,54+i*20,V(h,i,70,130),i<2?'#9BB0DC':N,6)).join(''),
-seo:h=>R(40,16,288,34,{r:17})+Ci(62,33,8,W,B,2.6)+P('M68 39l8 8',{s:B,sw:2.6})+Ln(88,31,110,'#9BB0DC',6)+P('M40 124H328',{sw:2})+P(`M50 112L98 ${V(h,1,86,100)}L146 ${V(h,2,74,92)}L194 ${V(h,3,60,76)}L242 ${V(h,4,46,62)}L304 ${V(h,5,28,42)}`,{s:B,sw:3.2})+[[98,93],[146,83],[194,68],[242,54],[304,35]].map(([x,y])=>Ci(x,y,5,W,B,2.6)).join('')
+seo:h=>R(40,16,288,34,{r:17})+Ci(62,33,8,W,B,2.6)+P('M68 39l8 8',{s:B,sw:2.6})+Ln(88,31,110,'#9BB0DC',6)+P('M40 124H328',{sw:2})+P(`M50 112L98 ${V(h,1,86,100)}L146 ${V(h,2,74,92)}L194 ${V(h,3,60,76)}L242 ${V(h,4,46,62)}L304 ${V(h,5,28,42)}`,{s:B,sw:3.2})+[[98,93],[146,83],[194,68],[242,54],[304,35]].map(([x,y])=>Ci(x,y,5,W,B,2.6)).join(''),
+pptxcode:(lab)=>h=>Win(24,18,150,112)+[0,1,2,3].map(i=>Ln(40+(i%2)*10,48+i*17,V(h,i,50,96),[B,C,N,B][i],6)).join('')+T(164,122,lab||'.py',{z:11,a:'end',f:C,m:1,w:700})+Ar(184,74,214,74,B)+SL(222,24,116,92,1),
+tpl:h=>R(26,18,100,66,{r:6,f:L,d:'5 4'})+Ln(36,28,40,'#9BB0DC',6)+R(36,44,38,30,{r:4,f:'none',s:'#9BB0DC',d:'4 3'})+R(80,44,36,30,{r:4,f:'none',s:'#9BB0DC',d:'4 3'})+R(26,94,100,36,{r:6})+P('M26 106H126M26 118H126M60 94V130M94 94V130',{sw:1.6})+Ar(140,76,194,76,B)+SL(202,22,136,96,1),
+deckmd:h=>R(24,16,120,118,{r:8,f:N,s:N})+T(36,40,'# Título',{z:12,m:1,f:W})+T(36,62,'---',{z:12,m:1,f:C})+T(36,84,'- ponto',{z:12,m:1,f:'#BFD0F7'})+T(36,106,'- ponto',{z:12,m:1,f:'#BFD0F7'})+Ar(156,76,196,76,B)+SL(206,18,132,52,0)+SL(206,80,132,52,1),
+slideweb:h=>Win(30,12,308,122)+R(56,44,256,76,{r:6,f:L,sw:1.8})+Ln(72,58,100,B,7)+Ln(72,74,150)+Ln(72,88,120)+P('M44 82l-8 8 8 8M324 82l8 8-8 8',{sw:2.4})+[0,1,2,3].map(i=>Ci(160+i*14,128,0)).join(''),
+interdeck:h=>Win(24,14,214,118)+Ln(40,46,80,B,7)+[0,1,2].map(i=>Ln(40,62+i*14,V(h,i,70,150),[C,N,C][i],6)).join('')+R(250,26,88,52,{r:8,f:L})+Ln(260,38,56)+Ln(260,52,40,C)+Ci(294,104,18,M)+Ci(294,99,6,W)+P('M283 116a11 9 0 0 1 22 0',{}),
+multi:h=>R(24,38,70,76,{r:8,f:N,s:N})+T(59,82,'.qmd',{z:15,f:W,m:1,a:'middle'})+Ar(98,66,172,34,B)+Ar(98,76,172,76,B)+Ar(98,86,172,116,B)+[['HTML',L],['PPTX',M],['PDF',W]].map(([t,f],i)=>R(180,18+i*40,152,30,{r:8,f})+T(256,38+i*40,t,{z:13,a:'middle'})).join(''),
+tts:h=>R(24,34,100,72,{r:10})+Ln(36,50,76)+Ln(36,64,56,C)+Ln(36,78,68)+Ar(138,70,176,70,B)+Array.from({length:12},(_,i)=>{const v=8+Math.abs(Math.sin(i*.8+V(h,1,0,3)))*46;return `<rect x="${190+i*12.5}" y="${70-v/2}" width="7" height="${v}" rx="3.5" fill="${i%3===1?C:B}"/>`}).join(''),
+prompt2deck:(lab)=>h=>R(24,22,100,44,{r:16})+Ln(38,38,64)+Ln(38,50,40,C)+R(24,82,50,22,{r:11,f:B,s:B})+T(49,97,lab||'IA',{z:12,f:W,a:'middle'})+P('M146 40l4 12 12 4-12 4-4 12-4-12-12-4 12-4z',{f:B,s:B,sw:1})+R(196,20,124,78,{r:6,f:L})+R(184,32,124,78,{r:6,f:M})+SL(172,44,124,84,1)
 };
 const MAP={
 'nfephp-org/sped-nfe':'nfe','akretion/nfelib':'nfe','Samuel-Oliveira/Java_NFe':['nfe','NFC-e'],'wmixvideo/nfe':'nfe','TadaSoftware/PyNFe':'nfe','Unimake/DFe':['nfe','CT-e'],'ZeusAutomacao/DFe.NET':['nfe','NFC-e'],'thiagopatzdorf/nota-aberta':['nfe','NFS-e'],
@@ -80,11 +89,16 @@ const MAP={
 'opf/openproject':'gantt','makeplane/plane':'kanban','duckdb/duckdb':'banco','apache/superset':'dashboard','metabase/metabase':'dashboard','apache/airflow':'pipeline',
 'pydantic/pydantic-ai':'agente','BerriAI/litellm':'gateway','paperclipai/paperclip':'org','ctresb/leis':'lei',
 'CapSoftware/Cap':'rec','OpenWhispr/openwhispr':'mic','debpalash/VoiceStudio':'wave','WyattBlue/auto-editor':'cut','ggml-org/whisper.cpp':'transcr','m-bain/whisperX':'wordtime','SubtitleEdit/subtitleedit':'legenda','OpenCut-app/OpenCut':'editor','remotion-dev/remotion':'codevideo','obsproject/obs-studio':'live',
-'calcom/cal.diy':'agenda','chatwoot/chatwoot':'chat','AppFlowy-IO/AppFlowy':'notas','every-app/open-seo':'seo'};
+'calcom/cal.diy':'agenda','chatwoot/chatwoot':'chat','AppFlowy-IO/AppFlowy':'notas','every-app/open-seo':'seo',
+'gitbrent/PptxGenJS':['pptxcode','JS'],'scanny/python-pptx':['pptxcode','Python'],'singerla/pptx-automizer':'tpl','ykuwai/ppt-mcp':'mcp',
+'presenton/presenton':['prompt2deck','IA'],'hugohe3/ppt-master':['conv','DOC','PPTX'],'icip-cas/PPTAgent':'tpl','Anionex/banana-slides':['prompt2deck','IMG'],'barun-saha/slide-deck-ai':['prompt2deck','JSON'],
+'marp-team/marp-cli':'deckmd','slidevjs/slidev':'interdeck','hakimel/reveal.js':'slideweb','quarto-dev/quarto-cli':'multi',
+'heygen-com/hyperframes':['codevideo','HTML'],'redotvideo/revideo':['codevideo','TS'],'hexgrad/kokoro':'tts'};
+const PAR=new Set(['nfe','conv','codevideo','pptxcode','prompt2deck']);
 const FUNDOS=[L,M,'#DDF3F7','#EAEEFB'];
 const hash=s=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
 window.THUMB=function(r){
-  const h=hash(r.repo),m=MAP[r.repo]||'dashboard',[k,a1,a2]=Array.isArray(m)?m:[m],f=(k==='nfe'||k==='conv')?S[k](a1,a2):S[k];
+  const h=hash(r.repo),m=MAP[r.repo]||'dashboard',[k,a1,a2]=Array.isArray(m)?m:[m],f=(PAR.has(k))?S[k](a1,a2):S[k];
   const nome=r.repo.split('/')[1],w=Math.min(340,nome.length*8.2+26);
   const fundo=FUNDOS[h%FUNDOS.length];
   return `<svg viewBox="0 0 368 176" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração: ${esc(nome)}"><rect width="368" height="176" fill="${fundo}"/><g>${f(h)}</g><rect x="14" y="146" width="${w}" height="22" rx="11" fill="${N}"/><text x="${14+w/2}" y="161" font-family="system-ui,Segoe UI,Roboto,sans-serif" font-size="12.5" font-weight="700" fill="#fff" text-anchor="middle">${esc(nome)}</text></svg>`;
